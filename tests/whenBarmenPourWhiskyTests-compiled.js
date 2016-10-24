@@ -26,12 +26,11 @@ suite('when barmen pour whisky', function () {
     setup(function (done) {
         this.timeout(20000);
         (0, _me.sober)();
-        (0, _imageDownloader.download)('http://www.rosa-obs.com/images/ccd/M31_karel_full.jpg', 'mycar.jpg', function () {
-            var car = (0, _me.getMyCar)("mycar.jpg");
-            (0, _me.goToBar)(car);
-            (0, _barmen.free)();
-            done();
-        });
+        var imageData = [];
+        var car = (0, _me.getMyCar)(imageData);
+        (0, _me.goToBar)(car);
+        (0, _barmen.free)();
+        done();
     });
 
     suite('i ask 50 grams', function () {
