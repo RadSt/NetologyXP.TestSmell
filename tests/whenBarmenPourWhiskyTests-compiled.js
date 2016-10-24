@@ -37,7 +37,7 @@ suite('when barmen pour whisky', function () {
         test('I get and drink 50 grams of whisky', function (done) {
 
             var iAskVolume = 50;
-            var whisky = (0, _me.get50GrammWhisky)();
+            var whisky = (0, _me.getWhisky)(50);
 
             var volumeInGlass = (0, _barmen.pour)(whisky, iAskVolume);
             (0, _me.drink)(volumeInGlass);
@@ -49,18 +49,14 @@ suite('when barmen pour whisky', function () {
 
     suite('i ask -10 grams', function () {
         test('I get an error', function (done) {
-            _fs2.default.readFile('whisky.jpg', function (err, whisky) {
-                if (err) {
-                    throw err;
-                }
 
-                var iAskVolume = -10;
+            var iAskVolume = -10;
+            var whisky = (0, _me.getWhisky)(-10);
 
-                (0, _chai.expect)(function () {
-                    return (0, _barmen.pour)(whisky, iAskVolume);
-                }).to.throw(/Invalid volume of whisky/);
-                done();
-            });
+            (0, _chai.expect)(function () {
+                return (0, _barmen.pour)(whisky, iAskVolume);
+            }).to.throw(/Invalid volume of whisky/);
+            done();
         });
     });
 

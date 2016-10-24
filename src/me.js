@@ -25,6 +25,6 @@ export function goToBar(car) {
 
 }
 
-export function get50GrammWhisky(){
-    return 50;
+export function getWhisky(volume){
+    return volume;
 }
