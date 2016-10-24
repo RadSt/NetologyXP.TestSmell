@@ -1,6 +1,6 @@
 import assert from 'assert'
 import { pour, free as freeBarmen } from '../src/barmen'
-import { drink, sober, goToBar, getMyCar, getTotallyDrunked, isDrunked } from '../src/me'
+import { drink, sober, goToBar, getMyCar, getTotallyDrunked, isDrunked, get50GrammWhisky } from '../src/me'
 import { download } from '../src/imageDownloader'
 import fs from 'fs'
 import { expect } from 'chai'
@@ -20,19 +20,15 @@ suite('when barmen pour whisky', function () {
 
     suite('i ask 50 grams', function () {
         test('I get and drink 50 grams of whisky', function (done) {
-            fs.readFile('whisky.jpg', function (err, whisky) {
-                if (err) {
-                    done(err);
-                }
 
                 var iAskVolume = 50;
+                var whisky = get50GrammWhisky();
 
                 var volumeInGlass = pour(whisky, iAskVolume);
                 drink(volumeInGlass);
 
                 assert.equal(iAskVolume, volumeInGlass);
                  done();
-            });
         });
     });
 
