@@ -48,7 +48,7 @@ suite('when barmen pour whisky', function () {
     });
 
     suite('i ask -10 grams', function () {
-        test('I get an error', function (done) {
+        test('I get an answer that volume is invalid', function (done) {
 
             var iAskVolume = -10;
             var whisky = (0, _me.getWhisky)(-10);
