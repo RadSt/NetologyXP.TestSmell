@@ -37,7 +37,7 @@ suite('when barmen pour whisky', function () {
         test('I get and drink whisky', function (done) {
             _fs2.default.readFile('whisky.jpg', function (err, whisky) {
                 if (err) {
-                    throw err;
+                    done(err);
                 }
 
                 var iAskVolume = 50;
