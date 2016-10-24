@@ -60,7 +60,7 @@ suite('when barmen pour whisky', function () {
         });
     });
 
-    suite('i ask 500 grams', function () {
+    suite('i ask more than 200 grams', function () {
         test('Barmen said there is no such glass', function (done) {
 
             (0, _username2.default)().then(function (un) {
